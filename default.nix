@@ -1,6 +1,6 @@
 { stdenv, fetchFromGitHub, meson, ninja, pkgconfig, cmake, libev, libX11
 , xcbutilrenderutil, xcbutilimage, libXext, pixman, uthash, libconfig
-, pcre, libGL, dbus }:
+, pcre, libGL, dbus, git }:
 
 stdenv.mkDerivation {
   pname = "compton-unstable";
@@ -15,7 +15,7 @@ stdenv.mkDerivation {
 
   installFlags = [ "PREFIX=$(out)" ];
 
-  nativeBuildInputs = [ meson ninja pkgconfig cmake uthash ];
+  nativeBuildInputs = [ meson ninja pkgconfig cmake uthash git ];
 
   buildInputs = [
     libev libX11 xcbutilrenderutil xcbutilimage libXext pixman libconfig
